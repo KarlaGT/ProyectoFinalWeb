@@ -1,4 +1,5 @@
-var x = "Tqm";
-console.log("Hola bb " + x);
-var y = 30;
-console.log(y);
+console.time('looper')
+let i = 0;
+while (i < 1000000) { i++ }
+
+console.timeEnd('looper')

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset= "UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./codepen.css" class="rel">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" 
+       href="https://fonts.googleapis.com/css2?family=Crimson+Pro"> 
+    
+       <script src="Consulta.js"> </script>
+
+
+  </head>
+  
+  <body>
+    <h1> 💂‍♀️ ¡ADMINISTRAR USUARIOS!</h1>
+   
+    <br>
+    <br>
+    <button type="button" class="btn btn-success" onclick="Consultar()">AGREGAR</button>
+    <button type="button" class="btn btn-danger">ELIMINAR</button>
+    <button type="button" class="btn btn-warning">MODIFICAR</button>
+    <button type="button" class="btn btn-light">NUEVO</button>
+
+    <br>
+    <br>
+    <!-- Fila de text box para registrar nuevos usuarios -->
+    <div class="row">
+        <!-- Imágen -->
+        <div class="col">
+            <img src="https://cdn.dribbble.com/users/2893989/screenshots/11789384/media/ad19f67734d250e553c3aa50eb253f5c.png" class="img-thumbnail" alt="No find" width="250px" margin=50px>  
+        </div>
+        <!-- Campos de usuario -->
+        <div class="col-md-2">
+            <label for="inputIdUser">ID User</label>
+            <input type="text" class="form-control" id="inputIdUser" placeholder="ID User">
+        </div>
+        <div class="col-md-4">
+            <label for="inputNombre">Nombre</label>
+            <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+        </div>
+        <div class="col-md-4">
+            <label for="inputApellido">Apellido</label>
+            <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+        </div>
+        <div class="col">
+            <img src="https://cdn.dribbble.com/users/2893989/screenshots/11832870/media/91735b83949645e841fe08f4504efc3e.png" class="img-thumbnail" alt="No find" width="250px" margin=50px>  
+        </div>
+        <div class="col-md-4">
+            <label for="inputTel">Teléfono</label>
+            <input type="text" class="form-control" id="inputTel" placeholder="Teléfono">
+        </div>
+        <br>
+        <br>
+        <!-- Correo y contraseña  -->
+        <div class="form-group col-md-4">
+            <label for="inputEmail4">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputPassword4">Password</label>
+            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+        </div>
+    </div>
+
+    <!-- Nueva fila para la tabla -->
+      <div class="row">
+        <br>
+        <div class="col-md-12">
+          <div class="table-responsive-xl">
+            <table class="table table-striped table-dark" id="tablita">
+                <thead>
+                    <tr>
+                        <th scope="col">ID Usuario</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Correo</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Contraseña</th>
+                    </tr>
+                </thead>
+                <tbody id="body"></tbody>
+            </table>
+        </div>
+      </div>
+
+    <br>
+    <br>
+    <br>
+
+  </body>
+  
+  <script src="./users.js"></script>
+</html>

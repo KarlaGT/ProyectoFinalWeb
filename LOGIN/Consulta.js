@@ -1,0 +1,22 @@
+function Consultar()
+{
+     $.ajax({                        
+        type: "GET",                 
+        url: 'ConsultaBD.php',                     
+        datatype:'json',
+        success: function(json){
+            var tabla = document.getElementById('body');
+            
+            for(var i = 0; i < json.length; i++){
+                tabla.innerHTML +=`<tr>
+                <td>${json[i].IdUsuario}</td>
+                <td>${json[i].Nombre}</td>
+                <td>${json[i].Apellido}</td>
+                <td>${json[i].Correo}</td>
+                <td>${json[i].Telefono}</td>
+                <td>${json[i].Contraseña}</td>
+                </tr>`;
+            }
+        }
+    });
+}

@@ -1,0 +1,34 @@
+<?php
+
+error_reporting(0);
+header('Content-type: application/json; charset=utf-8');
+
+$conexion = new mysqli('localhost', 'root', '', 'kafe');
+
+if($conexion->connect_errno){
+	$respuesta = [
+		'error' => true
+	];
+} else {
+	$conexion->set_charset("utf8");
+	$statement = $conexion->prepare("SELECT * FROM usuario");
+	$statement->execute();
+	$resultados = $statement->get_result();
+	
+	$respuesta = [];
+	
+	while($fila = $resultados->fetch_assoc()){
+		$usuario = [
+			'IdUsuario' 	=> $fila['IdUsuario'],
+			'Nombre' 		=> $fila['Nombre'],
+			'Apellido'		=> $fila['Apellido'],
+			'Correo'		=> $fila['Correo'],
+			'Telefono'		=> $fila['Telefono'],
+			'Contraseña'	=> $fila['Contraseña']
+		];
+		array_push($respuesta, $usuario);
+	}
+}
+
+echo json_encode($respuesta);
+?>
